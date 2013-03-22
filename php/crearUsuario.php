@@ -30,7 +30,7 @@ $result = mysqli_query ($conexion,$sql);
 
 // verificamos que no haya error
 if (!$result){
-echo "La consulta SQL contiene errores.".mysql_error();
+echo "La consulta SQL contiene errores."mysqli_connect_error();
 exit();
 }
 else {
