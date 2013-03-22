@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>ASISTENCIA</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css" title="style" />
+  <script language="javascript" type="text/javascript" src="../javascrip/valida.js">
+  </script>
+</head>
+<body>
+	<div id="main">
+    <div id="header">
+      <div id="logo"></div>
+    </div>
+    <div id="site_content">
+	<form action="crearUsuario.php" method="post" onSubmit="return validar();">
+	<fieldset>
+		<legend>DATOS PERSONALES</legend>		
+		<p>
+            <label for="lbmatricula">Matricula: </label>
+		  <input type="text" id="hmatricula_usuario" name="hmatricula_usuario" size="8" onBlur="revisarObli(this); revisarLongitud(this, 5, 5);">
+		<label for="lbtipo_usuario">Tipo documento:</label>		
+		<select name="tipo_usuario" SIZE=1 onChange="irA(this)">
+		<option value='TI'>TI</option>
+		<option value='CC'>CC</option>
+		</select>
+		<label for="lbdocumento_usuario">Documento de identidad: </label>
+		  <input type="text" id="hdocumento_usuario" name="hdocumento_usuario" size="20" onBlur="revisarObli(this); revisarNumerico(this);"><br>
+		  <label for="lbnombre_usuario">Nombre: </label>
+		  <input type="text" id="hnombre_usuario" name="hnombre_usuario" size="50" onBlur="revisarObli(this)">
+		  <label for="lbapellido_usuario">Apellido: </label>
+		  <input type="text" id="hapellido_usuario" name="hapellido_usuario" size="50" onBlur="revisarObli(this)"><br>	
+		  <label for="lbemail_usuario">E-mail: </label>
+		  <input type="text" id="hmail_usuario" name="hmail_usuario" size="50" onBlur="revisarObli(this); revisarEmail(this)">
+		  <label for="lbmovil">Celular: </label>
+		  <input type="text" id="hcelular_usuario" name="hcelular_usuario" size="10" onBlur="revisarObli(this); revisarNumerico(this); revisarLongitud(this, 10, 10)">
+		
+		<!--<label for="lbusuario">Usuario: </label><input type="text" name="husuario" size="50"><br>	
+		<label for="lbcontrasena">Contrasena: </label><input type="password" id="contra" name="hcontra">-->	
+	</fieldset>
+    	</p>
+	<fieldset>
+		<legend>DATOS CARRERA</legend>		
+		<p>
+        <label for="lbcodigo_carera">Codigo: </label>
+        <?php
+		include "conexion.php";
+		$sql="SELECT codigo_carrera, nombre_carrera FROM carrera";
+		$campo_text="<input type='text' id='hdescripcion_carrera' name='hdescripcion_carrera' size='50'>";
+		$combo="<select name='cod_carrera' id='cod_carrera'>";
+		$result = mysqli_query ($conexion,$sql);
+		// DESPLIEGA 
+		while ($row=mysqli_fetch_array($result))
+		{
+		$combo.="<option value=".$row['codigo_carrera'];
+		$combo.=">".$row['codigo_carrera']."</option>";;
+		}
+		$combo.="</select>";
+		include "desconectar.php"; 
+		?>
+        <?
+		echo $combo;
+		echo "<label for='lbdescripcion'>Descripcion: </label>";
+		echo $campo_text;
+		?>
+    </fieldset>
+    	</p>	
+	<fieldset>
+		<legend>DATOS ASIGNATURAS</legend>		
+  		  <label for="lbcodigo_asignatura">Codigo: </label>
+		  <input type="text" id="hcodigo_asignatura" name="hcodigo_asignatura" size="50">
+		  <label for="lbdescripcion_asignatura">Asignatura: </label>
+		  <input type="text" id="hdescripcion_asignatura" name="hdescripcion_asignatura" size="50">
+    </fieldset>
+    	</p>
+	<input type="submit" value="Enviar">
+	<input type="reset" value="Restaurar">
+	</form>
+		</div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      UNIVERSIDAD INCCA DE COLOMBIA 2013</div>
+  	</div>
+
+</body>
+</html>

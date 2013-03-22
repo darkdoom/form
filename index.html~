@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>ASISTENCIA</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo"></div>
+    </div>
+    <div id="site_content">
+      <h1>ASISTENCIA VIRTUAL:</h1></br>
+  <p>SELECCIONE LA OPCION DESEADA:</p>
+  <p><a href="consulta_est.html"><button>CONSULTAR ESTUDIANTE</button></a></p>
+  <p><a href="php/consultar_todos.php"><button>CONSULTAR TODOS</button></a></p>
+  <p><a href="php/crearUsuario.php"><button>USUARIO NUEVO</button></a></p>
+  <p>&nbsp;</p>
+    </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      UNIVERSIDAD INCCA DE COLOMBIA 2013</div>
+  </div>
+</body>
+</html>
