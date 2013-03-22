@@ -3,11 +3,11 @@
 <head>
 <title>ASISTENCIA</title>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css" title="style" />
 </head>
 <body>
     <div id="header">
-      <div id="logo" onclick="location.href='http://apoyoterapeutico.co/formulario';" style="cursor: pointer"></div>
+      <div id="logo"></div>
     </div>
     <div id="site_content">
   <p>
@@ -20,18 +20,15 @@ $nombre=$_POST['hnombre_usuario'];
 $apellido=$_POST['hapellido_usuario'];
 $email=$_POST['hmail_usuario'];
 $celular=$_POST['hcelular_usuario'];
-/*$cod_carrera=$_POST['cod_carrera'];
+$cod_carrera=$_POST['cod_carrera'];
 $sql ="INSERT INTO incripcion VALUES ('$cod_carrera','$matricula')"; 
-$result = mysqli_query ($conexion,$sql);*/
+$result = mysqli_query ($conexion,$sql);
 $sql ="INSERT INTO estudiante VALUES ('$matricula','$tipo','$documento','$nombre','$apellido','$email','$celular')";
 $result = mysqli_query ($conexion,$sql);
 //$result2 = mysql_query ($sql2);
-
-
 // verificamos que no haya error
-if (!$result){
-die('Error: '.mysqli_error());
-//echo "La consulta SQL contiene errores".mysqli_connect_error();
+if (!$result){    			
+echo "La consulta SQL contiene errores.".mysql_error();
 exit();
 }
 else {
