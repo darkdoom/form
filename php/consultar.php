@@ -3,11 +3,11 @@
 <head>
 <title>ASISTENCIA</title>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-  <link rel="stylesheet" type="text/css" href="../style/style.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
 </head>
 <body>
     <div id="header">
-      <div id="logo" onclick="location.href='http://apoyoterapeutico.co/formulario';" style="cursor: pointer"></div>
+      <div id="logo"onclick="location.href='http://apoyoterapeutico.co/formulario';" style="cursor: pointer"></div>
     </div>
     <div id="site_content">
   <?php 
