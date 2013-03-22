@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="header">
-      <div id="logo"></div>
+      <div id="logo" onclick="location.href='http://apoyoterapeutico.co/formulario';" style="cursor: pointer"></div>
     </div>
     <div id="site_content">
   <p>
